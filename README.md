@@ -1,4 +1,4 @@
 # .stack
-Stack-based language using a python interpreter
+Stack-based language made in python
 
 Documentation (kinda): https://cjdough.github.io/dotstack
