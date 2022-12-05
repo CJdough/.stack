@@ -132,9 +132,9 @@ def run():
                                 error("Error: Redirect goes outside code length")
                             else:
                                 if redirect >= 0:
-                                    redirect += 1
-                                elif redirect < 0:
                                     redirect -= 1
+                                elif redirect < 0:
+                                    redirect += 1
                                 codeIndex = codeIndex + redirect
                     case "equal":
                         value1 = stack[len(stack)-1]
@@ -205,7 +205,8 @@ for line in file:
                 comment = [*command]
                 comment = comment[0 : command.index("#")]
                 command = "".join(comment)
-            code.append(command.strip("\n").strip(" "))
+            if command.strip("\n").strip(" ") != "":
+                code.append(command.strip("\n").strip(" "))
         else:
             if line[1].strip(" ") == "\n":
                 code.append(line[0].strip("\n").strip(" "))
